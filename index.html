@@ -1,0 +1,1249 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asara Engineering and Consultant | Engineering & Architectural Services</title>
+    <style>
+        /* CSS RESET & VARIABLES */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #0f2537;
+            --primary-light: #1e3a8a;
+            --accent: #f97316;
+            --accent-hover: #ea580c;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --success: #10b981;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-h-screen: 100vh;
+        }
+
+        /* TOP CONTACT ANNOUNCEMENT BAR */
+        .top-bar {
+            background-color: #08121e;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            padding: 8px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .top-bar-info span {
+            margin-right: 15px;
+        }
+
+        .top-bar-phones a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .top-bar-phones a:hover {
+            text-decoration: underline;
+        }
+
+        /* NAVIGATION HEADER */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .brand-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .brand-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn {
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1.5px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background-color: #f1f5f9;
+        }
+
+        .btn-dark {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-dark:hover {
+            background-color: #1a364e;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background-color: var(--primary);
+            color: white;
+            padding: 80px 24px;
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .roster-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            padding: 24px;
+        }
+
+        .roster-card h3 {
+            color: var(--accent);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .roster-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+            background: rgba(255,255,255,0.03);
+            padding: 10px 14px;
+            border-radius: 8px;
+        }
+
+        .roster-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        /* SECTIONS & CONTAINERS */
+        section {
+            padding: 70px 24px;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 30px 24px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-badge {
+            width: 40px;
+            height: 40px;
+            background-color: #ffedd5;
+            color: var(--accent);
+            font-weight: bold;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ESTIMATOR CALCULATOR */
+        .estimator-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 36px;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+            background-color: #fff;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent);
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .checkbox-label input {
+            accent-color: var(--accent);
+        }
+
+        .result-display {
+            background-color: var(--primary);
+            color: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .result-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .result-item label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #94a3b8;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        .result-amount {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        /* FORMS SECTION WITH TABS */
+        .forms-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-tabs {
+            display: flex;
+            background-color: #f1f5f9;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 16px;
+            border: none;
+            background: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background-color: var(--card-bg);
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .tab-content {
+            padding: 36px;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* CONTACT SECTION */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .contact-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* MODAL (FOR ADMIN LOGIN & DESK) */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(15, 23, 42, 0.75);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-body {
+            background-color: white;
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        }
+
+        .modal-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-content-inner {
+            padding: 24px;
+        }
+
+        /* ADMIN TABLE */
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 15px;
+        }
+
+        .admin-table th, .admin-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .admin-table th {
+            background-color: #f8fafc;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .status-pending { background-color: #fef3c7; color: #d97706; }
+        .status-resolved { background-color: #d1fae5; color: #059669; }
+
+        /* TOAST NOTIFICATION */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            z-index: 2000;
+            display: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #08121e;
+            color: #94a3b8;
+            padding: 40px 24px 20px 24px;
+            margin-top: auto;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .hero-container, .estimator-box {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Action completed successfully</div>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <span>📍 Hingna, Mahajanwadi, Nagpur / At Ashti</span>
+            <span>⏱️ Mon - Sat: 9:00 AM - 8:00 PM</span>
+        </div>
+        <div class="top-bar-phones">
+            Call Direct:
+            <a href="tel:8888875785">8888875785</a> |
+            <a href="tel:9730033644">9730033644</a>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="brand-logo">
+                <div class="logo-icon">A</div>
+                <div>
+                    <div class="brand-title">ASARA ENGINEERING</div>
+                    <div class="brand-subtitle">and consultant</div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#estimator">Cost Estimator</a></li>
+                <li><a href="#forms">Submit Request</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div style="display: flex; gap: 10px;">
+                <button onclick="scrollToForms('enquiry')" class="btn btn-primary">Submit Enquiry</button>
+                <button id="admin-nav-btn" onclick="openAdminDesk()" class="btn btn-outline">Admin Desk</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1>Precision Civil Engineering & Architectural Design</h1>
+                    <p>Providing sanctioned municipal blueprints, Vastu-compliant 2D planning, photorealistic 3D elevations, and accurate construction estimation.</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <button onclick="scrollToForms('enquiry')" class="btn btn-primary">Get Consultation</button>
+                        <a href="#estimator" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">Calculate Estimate</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="roster-card">
+                        <h3>Our Official Service Roster</h3>
+                        <div class="roster-item">
+                            <div class="roster-num">1</div>
+                            <div><strong>Estimation & Costing</strong> - Comprehensive BOQ & Budgeting</div>
+                        </div>
+                        <div class="roster-item">
+                            <div class="roster-num">2</div>
+                            <div><strong>Planning</strong> - Municipal Sanctions & Vastu Blueprinting</div>
+                        </div>
+                        <div class="roster-item">
+                            <div class="roster-num">3</div>
+                            <div><strong>Designer</strong> - RCC Structural & Architectural Layouts</div>
+                        </div>
+                        <div class="roster-item">
+                            <div class="roster-num">4</div>
+                            <div><strong>2D & 3D Modeling</strong> - Exterior Elevations & Renderings</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Roster Section -->
+        <section id="services">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Core Specializations</h2>
+                    <p>Delivering engineered precision and structural integrity for residential and commercial projects.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-badge">1</div>
+                        <h3>Estimation & Costing</h3>
+                        <p>Detailed quantity takeoffs, raw material budgeting, bank loan estimation reports, and structural cost feasibility analysis.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-badge">2</div>
+                        <h3>Planning</h3>
+                        <p>Vastu-compliant architectural floor plans, plot layouting, master planning, and municipal authority sanction drawings.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-badge">3</div>
+                        <h3>Designer (Structural & Arch)</h3>
+                        <p>RCC frame design, column/beam structural calculations, foundation design, and complete architectural drafting.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-badge">4</div>
+                        <h3>2D & 3D Modeling</h3>
+                        <p>Photorealistic 3D exterior elevations, color combinations, interior space layouts, and isometric 2D blueprints.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cost Estimator Section -->
+        <section id="estimator" style="background-color: #f1f5f9;">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Interactive Cost Estimator</h2>
+                    <p>Calculate indicative structural design and civil construction expenses based on your built-up square footage.</p>
+                </div>
+                <div class="estimator-box">
+                    <div>
+                        <div class="form-group">
+                            <label for="plot-area">Plot / Built-Up Area (Sq. Ft.)</label>
+                            <input type="number" id="plot-area" value="1500" min="200" max="20000" class="form-control" oninput="calculateEstimate()">
+                        </div>
+                        <div class="form-group">
+                            <label>Required Services</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="check-plan" checked onchange="calculateEstimate()"> Planning & Blueprint
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="check-struct" checked onchange="calculateEstimate()"> Structural RCC Design
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="check-3d" checked onchange="calculateEstimate()"> 3D Elevation Render
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="check-est" checked onchange="calculateEstimate()"> BOQ Cost Estimation
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="grade-select">Quality Specification Grade</label>
+                            <select id="grade-select" class="form-control" onchange="calculateEstimate()">
+                                <option value="standard">Standard Grade (Residential)</option>
+                                <option value="premium" selected>Premium Grade (Modern Vastu)</option>
+                                <option value="luxury">Luxury Grade (High-End Finish)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="result-display">
+                        <div>
+                            <div class="result-item">
+                                <label>Design & Consultancy Fee</label>
+                                <div id="design-cost" class="result-amount">₹ 79,500</div>
+                                <div id="rate-per-sqft" style="font-size: 0.8rem; color: #94a3b8; margin-top: 4px;">Rate: ~₹53/sq.ft</div>
+                            </div>
+                            <div class="result-item" style="border: none;">
+                                <label>Estimated Civil Construction Budget</label>
+                                <div id="const-cost" style="font-size: 1.5rem; font-weight: 700; color: white; margin-top: 4px;">₹ 31,50,000</div>
+                                <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 4px;">*Indicative material & labor budget</div>
+                            </div>
+                        </div>
+                        <button onclick="transferToEnquiry()" class="btn btn-primary" style="width: 100%;">Book Formal Site Survey</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Submission Forms Section (Option 1 & 2) -->
+        <section id="forms">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Client Requests & Feedback</h2>
+                    <p>Submit your project details for an official quote or share your suggestions directly with our engineering panel.</p>
+                </div>
+                <div class="forms-card">
+                    <div class="form-tabs">
+                        <button id="tab-btn-enquiry" class="tab-btn active" onclick="switchTab('enquiry')">① Project Enquiry Form</button>
+                        <button id="tab-btn-suggestion" class="tab-btn" onclick="switchTab('suggestion')">② Suggestion / Feedback</button>
+                    </div>
+
+                    <!-- Option 1: Enquiry Form -->
+                    <div id="tab-enquiry" class="tab-content active">
+                        <form onsubmit="handleEnquirySubmit(event)">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <div class="form-group">
+                                    <label for="enq-name">Full Name *</label>
+                                    <input type="text" id="enq-name" required class="form-control" placeholder="e.g. Rajesh Patil">
+                                </div>
+                                <div class="form-group">
+                                    <label for="enq-phone">Mobile Number *</label>
+                                    <input type="tel" id="enq-phone" required class="form-control" placeholder="e.g. 8888875785">
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <div class="form-group">
+                                    <label for="enq-service">Primary Service</label>
+                                    <select id="enq-service" class="form-control">
+                                        <option>Estimation & Costing</option>
+                                        <option>Planning & Blueprinting</option>
+                                        <option>Structural & Architectural Design</option>
+                                        <option>2D & 3D Modeling / Elevation</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="enq-area">Plot / Built-Up Area</label>
+                                    <input type="text" id="enq-area" class="form-control" placeholder="e.g. 1500 sq.ft">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="enq-location">Site Location</label>
+                                <input type="text" id="enq-location" class="form-control" placeholder="e.g. Hingna, Mahajanwadi, Nagpur / Ashti">
+                            </div>
+                            <div class="form-group">
+                                <label for="enq-details">Project Description / Requirements</label>
+                                <textarea id="enq-details" rows="3" class="form-control" placeholder="Specify floor count (G+1, G+2), Vastu requirements, or special notes..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Project Enquiry</button>
+                        </form>
+                    </div>
+
+                    <!-- Option 2: Suggestion Form -->
+                    <div id="tab-suggestion" class="tab-content">
+                        <form onsubmit="handleSuggestionSubmit(event)">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <div class="form-group">
+                                    <label for="sug-name">Your Name (Optional)</label>
+                                    <input type="text" id="sug-name" class="form-control" placeholder="Enter name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sug-phone">Phone Number (Optional)</label>
+                                    <input type="tel" id="sug-phone" class="form-control" placeholder="Enter phone">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sug-rating">Satisfaction Rating</label>
+                                <select id="sug-rating" class="form-control">
+                                    <option value="5">5 ★★★★★ (Excellent)</option>
+                                    <option value="4">4 ★★★★☆ (Good)</option>
+                                    <option value="3">3 ★★★☆☆ (Average)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sug-text">Your Feedback / Suggestion *</label>
+                                <textarea id="sug-text" required rows="4" class="form-control" placeholder="Write your valuable feedback or suggestion for Asara Engineering..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-dark" style="width: 100%;">Submit Feedback</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Address & Contact Section -->
+        <section id="contact" style="background-color: #f1f5f9;">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Office Contact & Location</h2>
+                    <p>Reach out directly or visit our office desks.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>Direct Phone Lines</h3>
+                        <p style="margin-bottom: 15px; color: var(--text-muted);">Call or WhatsApp senior engineers:</p>
+                        <p><strong>Mobile 1:</strong> <a href="tel:8888875785" style="color: var(--accent);">8888875785</a></p>
+                        <p><strong>Mobile 2:</strong> <a href="tel:9730033644" style="color: var(--accent);">9730033644</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>Nagpur Office</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 10px;">Primary Consultancy Desk</p>
+                        <p><strong>Address:</strong> Hingna, Mahajanwadi, Nagpur, Maharashtra</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>Branch Office</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 10px;">Regional Supervision Desk</p>
+                        <p><strong>Address:</strong> At Ashti, Maharashtra</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ADMIN MODAL DIALOG (LOGIN & DESK) -->
+    <div id="admin-modal" class="modal">
+        <div class="modal-body">
+            <div class="modal-header">
+                <div>
+                    <h3 id="admin-modal-title" style="margin:0; font-size: 1.1rem;">Authorised Admin Login</h3>
+                    <span style="font-size: 0.75rem; color: #94a3b8;">Asara Engineering Portal</span>
+                </div>
+                <button class="modal-close" onclick="closeAdminDesk()">&times;</button>
+            </div>
+            <div class="modal-content-inner">
+                <!-- Login View -->
+                <div id="admin-login-view">
+                    <form onsubmit="handleAdminLogin(event)" style="max-width: 400px; margin: 20px auto;">
+                        <div class="form-group">
+                            <label for="admin-user">Username</label>
+                            <input type="text" id="admin-user" required class="form-control" value="admin">
+                        </div>
+                        <div class="form-group">
+                            <label for="admin-pass">Password</label>
+                            <input type="password" id="admin-pass" required class="form-control" value="admin123">
+                        </div>
+                        <div id="login-error" style="color: #ef4444; font-size: 0.85rem; margin-bottom: 15px; display: none;">Invalid credentials</div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Log In to Admin Desk</button>
+                    </form>
+                </div>
+
+                <!-- Admin Dashboard View -->
+                <div id="admin-dashboard-view" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div>
+                            <button id="admin-tab-enq" onclick="switchAdminSubTab('enquiries')" class="btn btn-primary">Enquiries Roster</button>
+                            <button id="admin-tab-sug" onclick="switchAdminSubTab('suggestions')" class="btn btn-outline">Suggestions</button>
+                        </div>
+                        <button onclick="handleAdminLogout()" class="btn btn-outline" style="color: #ef4444; border-color: #fca5a5;">Logout</button>
+                    </div>
+
+                    <!-- Enquiries Sub-Table -->
+                    <div id="admin-sub-enquiries" style="overflow-x: auto;">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Ref ID</th>
+                                    <th>Client Name</th>
+                                    <th>Phone</th>
+                                    <th>Service</th>
+                                    <th>Area / Location</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-enquiry-rows">
+                                <!-- Injected JS -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Suggestions Sub-Table -->
+                    <div id="admin-sub-suggestions" style="display: none; overflow-x: auto;">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Client</th>
+                                    <th>Phone</th>
+                                    <th>Rating</th>
+                                    <th>Feedback / Suggestion</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-suggestion-rows">
+                                <!-- Injected JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h4 style="color: white; margin-bottom: 10px;">ASARA ENGINEERING</h4>
+                <p>Engineering and Consultant firm specializing in civil planning, estimation, RCC design, and 3D modeling.</p>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 10px;">Service Roster</h4>
+                <p>1. Estimation & Costing</p>
+                <p>2. Planning & Blueprinting</p>
+                <p>3. Structural & Architectural Design</p>
+                <p>4. 2D & 3D Elevation Modeling</p>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 10px;">Offices</h4>
+                <p>Nagpur: Hingna, Mahajanwadi</p>
+                <p>Branch: At Ashti</p>
+                <p>Phone: 8888875785 / 9730033644</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; <span id="year"></span> Asara Engineering and Consultant. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Vanilla JavaScript -->
+    <script>
+        // DEFAULT PERSISTENT STORAGE DEMO DATA
+        const SEED_ENQUIRIES = [
+            { id: 'ENQ-101', name: 'Rajesh Sharma', phone: '8888875785', service: 'Planning & Blueprinting', area: '2400 sq.ft', location: 'Hingna, Nagpur', details: 'Need G+2 residential layout drawing', status: 'Pending' },
+            { id: 'ENQ-102', name: 'Priya Deshmukh', phone: '9730033644', service: '2D & 3D Modeling / Elevation', area: '4500 sq.ft', location: 'Mahajanwadi, Nagpur', details: 'Commercial elevation render needed', status: 'Resolved' }
+        ];
+
+        const SEED_SUGGESTIONS = [
+            { id: 'SUG-201', name: 'Amit Verma', phone: '9822001122', rating: '5', text: 'Great consultation for structural framing calculations!' }
+        ];
+
+        // INIT APPLICATION
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            if (!localStorage.getItem('asara_enquiries')) {
+                localStorage.setItem('asara_enquiries', JSON.stringify(SEED_ENQUIRIES));
+            }
+            if (!localStorage.getItem('asara_suggestions')) {
+                localStorage.setItem('asara_suggestions', JSON.stringify(SEED_SUGGESTIONS));
+            }
+
+            calculateEstimate();
+            checkAdminSession();
+        });
+
+        // TOAST NOTIFICATION
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 3500);
+        }
+
+        // COST ESTIMATOR CALCULATOR
+        function calculateEstimate() {
+            const areaInput = document.getElementById('plot-area').value;
+            const area = parseFloat(areaInput) || 0;
+
+            let ratePerSqFt = 0;
+            if (document.getElementById('check-plan').checked) ratePerSqFt += 12;
+            if (document.getElementById('check-struct').checked) ratePerSqFt += 18;
+            if (document.getElementById('check-3d').checked) ratePerSqFt += 15;
+            if (document.getElementById('check-est').checked) ratePerSqFt += 8;
+
+            const grade = document.getElementById('grade-select').value;
+            let multiplier = 1.0;
+            let constRate = 1650;
+
+            if (grade === 'premium') { multiplier = 1.35; constRate = 2100; }
+            if (grade === 'luxury') { multiplier = 1.7; constRate = 2800; }
+
+            const finalRate = Math.round(ratePerSqFt * multiplier);
+            const designTotal = Math.round(area * finalRate);
+            const constTotal = Math.round(area * constRate);
+
+            document.getElementById('design-cost').textContent = `₹ ${designTotal.toLocaleString('en-IN')}`;
+            document.getElementById('rate-per-sqft').textContent = `Rate: ~₹${finalRate}/sq.ft`;
+            document.getElementById('const-cost').textContent = `₹ ${constTotal.toLocaleString('en-IN')}`;
+        }
+
+        function transferToEnquiry() {
+            const area = document.getElementById('plot-area').value;
+            document.getElementById('enq-area').value = `${area} sq.ft`;
+            scrollToForms('enquiry');
+            showToast('Plot area transferred to Enquiry Form!');
+        }
+
+        // TAB SWITCHING FOR FORMS
+        function switchTab(tab) {
+            document.getElementById('tab-btn-enquiry').classList.toggle('active', tab === 'enquiry');
+            document.getElementById('tab-btn-suggestion').classList.toggle('active', tab === 'suggestion');
+            document.getElementById('tab-enquiry').classList.toggle('active', tab === 'enquiry');
+            document.getElementById('tab-suggestion').classList.toggle('active', tab === 'suggestion');
+        }
+
+        function scrollToForms(tab) {
+            switchTab(tab);
+            document.getElementById('forms').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // FORM SUBMISSIONS
+        function handleEnquirySubmit(e) {
+            e.preventDefault();
+            const newEnquiry = {
+                id: `ENQ-${Math.floor(100 + Math.random() * 900)}`,
+                name: document.getElementById('enq-name').value,
+                phone: document.getElementById('enq-phone').value,
+                service: document.getElementById('enq-service').value,
+                area: document.getElementById('enq-area').value || 'N/A',
+                location: document.getElementById('enq-location').value || 'Nagpur',
+                details: document.getElementById('enq-details').value || 'None',
+                status: 'Pending'
+            };
+
+            const list = JSON.parse(localStorage.getItem('asara_enquiries') || '[]');
+            list.unshift(newEnquiry);
+            localStorage.setItem('asara_enquiries', JSON.stringify(list));
+
+            e.target.reset();
+            showToast('Enquiry submitted successfully!');
+            renderAdminTables();
+        }
+
+        function handleSuggestionSubmit(e) {
+            e.preventDefault();
+            const newSuggestion = {
+                id: `SUG-${Math.floor(100 + Math.random() * 900)}`,
+                name: document.getElementById('sug-name').value || 'Anonymous',
+                phone: document.getElementById('sug-phone').value || 'N/A',
+                rating: document.getElementById('sug-rating').value,
+                text: document.getElementById('sug-text').value
+            };
+
+            const list = JSON.parse(localStorage.getItem('asara_suggestions') || '[]');
+            list.unshift(newSuggestion);
+            localStorage.setItem('asara_suggestions', JSON.stringify(list));
+
+            e.target.reset();
+            showToast('Feedback submitted successfully!');
+            renderAdminTables();
+        }
+
+        // ADMIN AUTHENTICATION & DESK
+        function checkAdminSession() {
+            const isLoggedIn = localStorage.getItem('asara_admin_session') === 'true';
+            document.getElementById('admin-login-view').style.display = isLoggedIn ? 'none' : 'block';
+            document.getElementById('admin-dashboard-view').style.display = isLoggedIn ? 'block' : 'none';
+            document.getElementById('admin-modal-title').textContent = isLoggedIn ? 'Executive Admin Desk' : 'Authorised Admin Login';
+            if (isLoggedIn) renderAdminTables();
+        }
+
+        function openAdminDesk() {
+            document.getElementById('admin-modal').classList.add('active');
+            checkAdminSession();
+        }
+
+        function closeAdminDesk() {
+            document.getElementById('admin-modal').classList.remove('active');
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('admin-user').value;
+            const p = document.getElementById('admin-pass').value;
+
+            if (u === 'admin' && p === 'admin123') {
+                localStorage.setItem('asara_admin_session', 'true');
+                document.getElementById('login-error').style.display = 'none';
+                checkAdminSession();
+                showToast('Logged in as Admin');
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
+        }
+
+        function handleAdminLogout() {
+            localStorage.removeItem('asara_admin_session');
+            checkAdminSession();
+            showToast('Logged out');
+        }
+
+        function switchAdminSubTab(subTab) {
+            document.getElementById('admin-tab-enq').className = subTab === 'enquiries' ? 'btn btn-primary' : 'btn btn-outline';
+            document.getElementById('admin-tab-sug').className = subTab === 'suggestions' ? 'btn btn-primary' : 'btn btn-outline';
+            document.getElementById('admin-sub-enquiries').style.display = subTab === 'enquiries' ? 'block' : 'none';
+            document.getElementById('admin-sub-suggestions').style.display = subTab === 'suggestions' ? 'block' : 'none';
+        }
+
+        // ADMIN RENDER & ACTIONS
+        function renderAdminTables() {
+            const enquiries = JSON.parse(localStorage.getItem('asara_enquiries') || '[]');
+            const suggestions = JSON.parse(localStorage.getItem('asara_suggestions') || '[]');
+
+            const enqBody = document.getElementById('admin-enquiry-rows');
+            enqBody.innerHTML = enquiries.length === 0 
+                ? '<tr><td colspan="7" style="text-align:center;">No enquiries found</td></tr>'
+                : enquiries.map(item => `
+                    <tr>
+                        <td><strong>${item.id}</strong></td>
+                        <td>${item.name}</td>
+                        <td>${item.phone}</td>
+                        <td>${item.service}</td>
+                        <td>${item.area}<br><small style="color:var(--text-muted);">${item.location}</small></td>
+                        <td>
+                            <span class="status-badge ${item.status === 'Resolved' ? 'status-resolved' : 'status-pending'}" onclick="toggleStatus('${item.id}')">
+                                ${item.status}
+                            </span>
+                        </td>
+                        <td>
+                            <a href="https://wa.me/91${item.phone}?text=Hello%20${encodeURIComponent(item.name)},%20this%20is%20Asara%20Engineering." target="_blank" class="btn btn-outline" style="padding: 4px 8px; font-size: 0.75rem;">WhatsApp</a>
+                            <button onclick="deleteRecord('enquiry', '${item.id}')" class="btn btn-outline" style="padding: 4px 8px; font-size: 0.75rem; color: #ef4444;">Delete</button>
+                        </td>
+                    </tr>
+                `).join('');
+
+            const sugBody = document.getElementById('admin-suggestion-rows');
+            sugBody.innerHTML = suggestions.length === 0
+                ? '<tr><td colspan="5" style="text-align:center;">No suggestions found</td></tr>'
+                : suggestions.map(item => `
+                    <tr>
+                        <td><strong>${item.name}</strong></td>
+                        <td>${item.phone}</td>
+                        <td><strong style="color:var(--accent);">${item.rating} ★</strong></td>
+                        <td>${item.text}</td>
+                        <td>
+                            <button onclick="deleteRecord('suggestion', '${item.id}')" class="btn btn-outline" style="padding: 4px 8px; font-size: 0.75rem; color: #ef4444;">Delete</button>
+                        </td>
+                    </tr>
+                `).join('');
+        }
+
+        function toggleStatus(id) {
+            const list = JSON.parse(localStorage.getItem('asara_enquiries') || '[]');
+            const item = list.find(i => i.id === id);
+            if (item) {
+                item.status = item.status === 'Pending' ? 'Resolved' : 'Pending';
+                localStorage.setItem('asara_enquiries', JSON.stringify(list));
+                renderAdminTables();
+                showToast(`Status updated to ${item.status}`);
+            }
+        }
+
+        function deleteRecord(type, id) {
+            const key = type === 'enquiry' ? 'asara_enquiries' : 'asara_suggestions';
+            let list = JSON.parse(localStorage.getItem(key) || '[]');
+            list = list.filter(i => (i.id || i.name) !== id);
+            localStorage.setItem(key, JSON.stringify(list));
+            renderAdminTables();
+            showToast('Record deleted');
+        }
+    </script>
+</body>
+</html>
